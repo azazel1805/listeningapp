@@ -3,13 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listening App</title>
+    <title>Listening Pal</title>
+    
+    <!-- Google Font: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 </head>
 <body>
-    <div class="container">
-        <h1>Listening App</h1>
+    <!-- Animated Background -->
+    <div class="background-aurora"></div>
+
+    <main class="container">
+        <h1>Listening Pal</h1>
+        <p class="subtitle">Personalized exercises powered by Gemini&Created by HOT</p>
 
         <div class="controls">
             <input type="text" id="topicInput" placeholder="Enter a topic (e.g., 'a weekend trip')">
@@ -19,7 +29,7 @@
                 <option value="Intermediate (B1)" selected>Intermediate (B1)</option>
                 <option value="Advanced (B2/C1)">Advanced (B2/C1)</option>
             </select>
-            <button id="generateBtn">Generate Monologue</button>
+            <button id="generateBtn">Generate</button>
         </div>
 
         <div id="loading" class="hidden">
@@ -29,8 +39,6 @@
 
         <div id="content" class="hidden">
             <div class="audio-player">
-                <h2>Listen & Read</h2>
-                <!-- === MODIFIED SECTION START === -->
                 <div class="audio-options">
                     <div class="voice-selection">
                         <label>Voice:</label>
@@ -43,7 +51,6 @@
                         <span id="rateValueSpan">1.0x</span>
                     </div>
                 </div>
-                <!-- === MODIFIED SECTION END === -->
                 <div class="audio-controls">
                     <button id="playBtn">Play</button>
                     <button id="pauseBtn">Pause</button>
@@ -57,13 +64,13 @@
             </div>
 
             <div id="tab-content">
-                <div id="script" class="tab-pane active"><p>Double-click any word to see its definition.</p></div>
+                <div id="script" class="tab-pane active"><p>Double-click any word for its definition.</p></div>
                 <div id="quiz" class="tab-pane"></div>
             </div>
         </div>
         
         <div id="error" class="hidden"></div>
-    </div>
+    </main>
 
     <div id="lookupPanel" class="hidden">
         <button id="closePanelBtn">&times;</button>
