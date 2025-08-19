@@ -207,3 +207,99 @@ input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; height: 16
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 10px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--text-secondary); }
+
+/* ================================================= */
+/* ===         RESPONSIVE DESIGN (MOBILE)        === */
+/* ================================================= */
+
+/* Apply these styles on screens 768px wide or smaller */
+@media (max-width: 768px) {
+    body {
+        /* Reduce padding on the body for more space */
+        padding: 1rem;
+        /* Align items to the top instead of centering vertically */
+        align-items: flex-start;
+    }
+
+    /* Make the main container take up more width */
+    .container {
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 1.8rem; /* Make the main title slightly smaller */
+    }
+
+    .subtitle {
+        font-size: 0.9rem; /* Adjust subtitle font size */
+        margin-bottom: 1.5rem;
+    }
+
+    /* --- Controls Section --- */
+    /* Stack the controls vertically instead of in a grid */
+    .controls {
+        grid-template-columns: 1fr; /* Single column layout */
+        gap: 0.75rem; /* Reduce the gap between elements */
+    }
+
+    .controls button {
+        /* Make the button full width for easy tapping */
+        width: 100%;
+        padding: 14px; /* Slightly larger padding for better touch target */
+    }
+
+    /* --- Audio Player --- */
+    .audio-options {
+        /* Stack the voice and speed controls */
+        flex-direction: column;
+        align-items: flex-start; /* Align to the left */
+        gap: 15px;
+    }
+
+    /* --- Script and Quiz --- */
+    #script {
+        font-size: 1rem; /* Slightly smaller font for readability on small screens */
+        line-height: 1.8; /* Adjust line height */
+    }
+
+    .quiz-question {
+        padding: 1rem; /* Reduce padding inside quiz boxes */
+    }
+    
+    .quiz-options label {
+        padding: 12px; /* Ensure labels are easy to tap */
+    }
+
+    /* --- Lookup Panel --- */
+    /* Reposition the lookup panel to be more mobile-friendly */
+    #lookupPanel {
+        /* Make it take up the full width at the bottom of the screen */
+        width: 100%;
+        max-width: 100%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: auto; /* Unset the top positioning */
+
+        /* Change transform origin for a slide-up animation */
+        transform: translateY(110%);
+        border-radius: 24px 24px 0 0; /* Round only the top corners */
+        border-bottom: none;
+    }
+
+    #lookupPanel.hidden {
+        /* Adjust the hidden state for the new position */
+        transform: translateY(110%);
+        opacity: 1; /* Keep opacity at 1 for slide animation */
+    }
+
+    /* Override the desktop active state transform */
+    #lookupPanel:not(.hidden) {
+        transform: translateY(0);
+    }
+
+    #closePanelBtn {
+        top: 15px;
+        right: 20px;
+    }
+}
